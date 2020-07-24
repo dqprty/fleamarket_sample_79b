@@ -1,0 +1,108 @@
+*{
+  box-sizing: border-box;
+}
+
+.topHeader{
+  padding: 0px 60px;
+  .contents{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0px 0px;
+    &__main{
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .icon{
+      padding-bottom: 10px;
+      margin-right: 30px;
+      border-radius: 4px;
+      img{
+        width: 14opx;
+        height: 40.55px;
+        vertical-align: bottom;
+      }
+      a{
+        width: 140px;
+      }
+    }
+    .searchField{
+      width: 100%;
+      margin-left: auto;
+      margin-bottom: 5px;
+      display: flex;    
+      &__text{
+        width: calc(100% - 26px);
+        height: 36px;
+        padding-left: 5px;
+      }
+      &__icon{
+        background-color: #3CCACE;
+        border: none; 
+      }
+    }
+    &__nav{
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .leftList{
+      display: flex;
+      list-style: none;
+      line-height: 32px;
+      background-position: center right;
+      background-repeat: no-repeat;
+      background-size: 18px;
+      &__item{
+        a{
+          color: #333;
+          text-decoration: none;
+        }
+        a:hover{
+          color: orange;
+        }
+        &--first{
+          padding-right: 30px;
+          a{
+            color: #333;
+            text-decoration: none;
+          }
+          a:hover{
+            color: orange;
+          }
+        }
+      }
+    }
+    .rightList{
+      display: flex;
+      align-items: center;
+      list-style: none;
+      &__item{
+        line-height: 38px;
+        &--login{
+          padding-left: 16px;
+          a{
+            line-height: 32px;
+            color: #333;
+            text-decoration: none;
+          }
+        }
+        &--new{
+          line-height: 32px;
+          padding-left: 16px;
+          a{
+            color: #333;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+h1{
+  font-size: 100%;
+  font-weight: normal;
+}

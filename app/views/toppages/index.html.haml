@@ -1,0 +1,20 @@
+.topHeader
+  .contents
+    .contents__main
+      %h1.icon
+        = image_tag 'logo.png', alt: 'noImage'
+      .searchField
+        %input{type: "text", class: "searchField__text", placeholder: "キーワードから探す"}
+        %input{type: "submit"}
+          .searchField__icon
+    .contents__nav
+      %ul.leftList
+        %li.leftList__item--first
+          %a(href="#") カテゴリー
+        %li.leftList__item
+          %a(href="#") ブランド
+      %ul.rightList
+        %li.rightList__item--login
+          %a(href="#") ログイン
+        %li.rightList__item--new
+          %a(href="#") 新規会員登録
