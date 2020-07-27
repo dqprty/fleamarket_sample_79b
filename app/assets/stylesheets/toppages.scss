@@ -20,7 +20,7 @@
       margin-right: 30px;
       border-radius: 4px;
       img{
-        width: 14opx;
+        width: 140px;
         height: 40.55px;
         vertical-align: bottom;
       }
@@ -99,6 +99,14 @@
         line-height: 38px;
         &--login{
           padding-left: 16px;
+          a{
+            line-height: 32px;
+            color: #333;
+            text-decoration: none;
+          }
+        } 
+        &__mypage{
+          padding-left: 20px;
           a{
             line-height: 32px;
             color: #333;
