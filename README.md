@@ -23,6 +23,7 @@
 ### Association
 - belongs_to :user
 
+
 ## addresssテーブル
 |Column|Type|Option|
 |------|----|------|
@@ -38,6 +39,7 @@
 |phone|integer||
 ### Association
 - belongs_to :user
+
 
 ## categorysテーブル
 |Column|Type|Option|
@@ -56,11 +58,11 @@
 |brand|string||
 |status|string|null: false|
 |price|integer|null: false|
-|shipping_host|string|null: false|
+|shipping_cost|string|null: false|
 |shipping_from|string|null: false|
 |days|integer|null: false|
-|user|reference|null: false, foreign_key:true|
-|category|reference|null: false, foreign_key:true|
+|user|references|null: false, foreign_key:true|
+|category|references|null: false, foreign_key:true|
 ### Association
 - has_many :comments
 - has_many :images
@@ -72,8 +74,8 @@
 |Column|Type|Option|
 |------|----|------|
 |comment|text|null: false|
-|user|reference|null: false, foreign_key:true|
-|product|reference|null: false, foreign_key:true|
+|user|references|null: false, foreign_key:true|
+|product|references|null: false, foreign_key:true|
 ### Association
 - belongs_to :product
 - belongs_to :user
@@ -82,8 +84,7 @@
 ## imagesテーブル
 |Column|Type|Option|
 |------|----|------|
-|image|integer|null: false|
-|product|reference|null: false, foreign_key:true|
+|image|string|null: false|
+|product|references|null: false, foreign_key:true|
 ### Association
 - belongs_to :product
-

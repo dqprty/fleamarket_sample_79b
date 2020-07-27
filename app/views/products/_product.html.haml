@@ -1,0 +1,12 @@
+.content
+  %p.product.name
+  %p.product.price
+    円
+  - product.images.each do |image|
+    = image_tag image.src.url
+
+= link_to edit_product_path(product) do
+  編集
+
+= link_to product_path(product), method: :delete
+  削除
