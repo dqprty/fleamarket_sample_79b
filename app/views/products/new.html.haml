@@ -29,11 +29,12 @@
         %span 必須
         .statusField
           = f.select :brand, Product.brands.keys, {prompt: '選択してください'}, class: "statusField__text"
-      .sellContents__category
-        カテゴリー
-        %span 必須
-        .categoryField
-          = f.select :name, Category.names.keys, {prompt: '選択してください'}, class: "categoryField__text"
+      = f.fields_for :category do |i|
+        .sellContents__category
+          カテゴリー
+          %span 必須
+          .categoryField
+            = i.select :name, Category.names.keys, {prompt: '選択してください'}, class: "categoryField__text"
       .sellContents__shipping
         配送について
         %ul.shippingLists
@@ -56,10 +57,11 @@
         販売価格（￥300〜￥9,999,999）
         %ul.priceLists
           %li.priceLists__value
-            価格
-            %span 必須
-            ¥
-            = f.number_field :price, class: "valueField__text"
+            .valueField
+              価格
+              %span 必須
+              ¥
+              = f.number_field :price, class: "valueField__text"
           %li.priceLists__fee
             販売手数料
             %span 必須

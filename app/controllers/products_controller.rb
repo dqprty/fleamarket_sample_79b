@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to toppage_path
+      redirect_to toppage_path(@product)
     else
       render :new
     end
@@ -31,5 +31,5 @@ end
 private
 
 def product_params
-  params.require(:product).permit(keys: [:name, :discribe, :brand, :shipping_cost, :shipping_from, :days, :price], category_attributes:[:name], images_attributes: [:src])
+  params.require(:product).permit(:name, :discribe, :brand, :shipping_cost, :shipping_from, :days, :price, category_attributes:[:id, :name], images_attributes: [:src])
 end
