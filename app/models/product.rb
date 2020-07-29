@@ -1,12 +1,9 @@
 class Product < ApplicationRecord
   has_many :comments
-  has_many :images
-  has_one :category
+  has_many :categories
   belongs_to :user
 
-  accepts_nested_attributes_for :category
-  accepts_nested_attributes_for :images, allow_destroy: true
-  enum brand:{
+  enum status:{
     新品、未使用:1, 未使用に近い:2, 目立った傷や汚れなし:3, やや傷や汚れなし:4, 
     傷や汚れあり:5, 全体的に状態が悪い:6
   }

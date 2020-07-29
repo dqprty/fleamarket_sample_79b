@@ -257,25 +257,14 @@
         }
         &__fee{
           margin-top: 10px;
-          span{
-            font-size: 13px;
-            color: white;
-            background-color: red;
-            border-radius: 5px;
-            padding: 3px;
-          }
         }
         &__profit{
           margin-top: 10px;
-          span{
-            font-size: 13px;
-            color: white;
-            background-color: red;
-            border-radius: 5px;
-            padding: 3px;
-          }
         }
       }
+    }
+    &__consent{
+      text-align: center;
     }
     &__action{
       text-align: center;
