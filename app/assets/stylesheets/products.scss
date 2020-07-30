@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 .sellMain{
   background-color: rgb(245, 245, 245);
   .sellHeader{
@@ -13,24 +17,71 @@
   }
   .sellContents{
     width: 700px;
+    height: 100%;
     background-color: white;
     margin: 0 auto;
     &__image{
-      font-weight: bold;
+      width: 100%;
       padding: 30px;
       border-bottom: lightgray solid 1px;
-      span{
-        font-size: 13px;
-        font-weight: normal;
-        color: white;
-        background-color: red;
-        border-radius: 5px;
-        padding: 3px;
+      &__h{
+        font-weight: bold;
+        span{
+          font-size: 13px;
+          font-weight: normal;
+          color: white;
+          background-color: red;
+          border-radius: 5px;
+          padding: 3px;
+        }
+        .formImage__text{
+          font-size: 13px;
+          margin-top: 3px;
+        }
       }
-      .imageUpload{
-        font-size: 12px;
-        font-weight: normal;
-        margin-top: 5px;
+      .imageBox{
+        width: 100%;
+        #previews{
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          .image-preview__wapper{
+            width: 80px;
+            height: 80px;
+            .preview{
+              width: 80px;
+              height: 80px;
+            }
+          }
+          .image-preview_btn{
+            text-align: center;
+            padding: 8px;
+            border-top: 1px solid #cccccc;
+            cursor: pointer;
+            &:hover{
+              transition: 0.5s;
+              background-color: #cccccc;
+            }
+          }
+          .input{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            .uploadLabel{
+              width: 620px;
+              height: 120px;
+              background-color: rgb(245, 245, 245);
+              .uploadLabel__text{
+                text-align: center;
+                width: 100%;
+                transform: translateY(60%);
+                .input-area{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
       }
     }
     &__name{
@@ -257,14 +308,25 @@
         }
         &__fee{
           margin-top: 10px;
+          span{
+            font-size: 13px;
+            color: white;
+            background-color: red;
+            border-radius: 5px;
+            padding: 3px;
+          }
         }
         &__profit{
           margin-top: 10px;
+          span{
+            font-size: 13px;
+            color: white;
+            background-color: red;
+            border-radius: 5px;
+            padding: 3px;
+          }
         }
       }
-    }
-    &__consent{
-      text-align: center;
     }
     &__action{
       text-align: center;
@@ -295,58 +357,58 @@
       }
     }
   }
-  .sellFooter{
-    text-align: center;
-    .box{
-      display: flex;
-      justify-content: center;
-      margin-top: 30px;
-      &__privacy{
-        font-size: 14px;
-        a{
-          text-decoration: none;
-          color: black;
-        }
-        a:hover{
-          background-color: whitesmoke;
-          opacity: 0.4;
-        }
+}
+.sellFooter{
+  text-align: center;
+  .box{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    &__privacy{
+      font-size: 14px;
+      a{
+        text-decoration: none;
+        color: black;
       }
-      &__terms{
-        font-size: 14px;
-        margin-left: 20px;
-        a{
-          text-decoration: none;
-          color: black;
-        }
-        a:hover{
-          background-color: whitesmoke;
-          opacity: 0.4;
-        }
-      }
-      &__transaction{
-        font-size: 14px;
-        margin-left: 20px;
-        a{
-          text-decoration: none;
-          color: black;
-        }
-        a:hover{
-          background-color: whitesmoke;
-          opacity: 0.4;
-        }
+      a:hover{
+        background-color: whitesmoke;
+        opacity: 0.4;
       }
     }
-    .icon{
-      padding-top: 30px;
-      img{
-        width: 140px;
-        height: 40.55px;
-        vertical-align: bottom;
+    &__terms{
+      font-size: 14px;
+      margin-left: 20px;
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      a:hover{
+        background-color: whitesmoke;
+        opacity: 0.4;
       }
     }
-    .copyRight{
-      font-size: 12px;
+    &__transaction{
+      font-size: 14px;
+      margin-left: 20px;
+      a{
+        text-decoration: none;
+        color: black;
+      }
+      a:hover{
+        background-color: whitesmoke;
+        opacity: 0.4;
+      }
     }
+  }
+  .icon{
+    padding-top: 30px;
+    img{
+      width: 140px;
+      height: 40.55px;
+      vertical-align: bottom;
+    }
+  }
+  .copyRight{
+    font-size: 12px;
   }
 }

@@ -5,10 +5,10 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def create
-    binding.pry
     @product = Product.new(product_params)
     if @product.save
       redirect_to root_path(@product)
@@ -30,5 +30,5 @@ end
 private
 
 def product_params
-  params.require(:product).permit(:name, :discribe, :brand, :status, :shipping_cost, :shipping_from, :days, :price).merge(:category_id)
+  params.require(:product).permit(:name, :discribe, :brand, :status, :shipping_cost, :shipping_from, :days, :price, :category_id)
 end

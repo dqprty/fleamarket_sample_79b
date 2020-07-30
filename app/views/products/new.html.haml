@@ -4,36 +4,47 @@
       = link_to image_tag('logo.png'), "/"
   .sellContents
     = form_for(@product) do |f|
+      .sellContents__image
+        .sellContents__image__h
+          %label 出品画像
+          %span 必須
+          .formImage__text 最大10枚までアップロードできます
+          = f.fields_for :images do |image|
+            .imageBox
+              %ul#previews
+                %li.input
+                  %label.uploadLabel
+                    .uploadLabel__text
+                      ドラッグアンドドロップ
+                      %br
+                      またはクリックしてファイルをアップロード
+                      .input-area
+                        = image.file_field :src, class: "hidden image_upload"
       .sellContents__name
         商品名 
         %span 必須
         .nameField
-          = f.label :name
           = f.text_field :name, class: "nameField__text", placeholder: "40文字まで", autofocus: true
       .sellContents__discribe
         商品の説明 
         %span 必須
         .discribeField
-          = f.label :discribe
           = f.text_area :discribe, class: "discribeField__text", rows: "7", placeholder: "商品の説明（1,000文字以内）（色、素材、重さ、定価、注意点など）例：2019年頃に購入したサンダルです。黒色であわせやすいのでおすすめです。"
       .sellContents__brand
         ブランド名
         %span 任意
         .brandField
-          = f.label :brand
           = f.text_field :brand, class: "brandField__text", placeholder: "例：エルメス"
       .sellContents__status
         商品の状態 
         %span 必須
         .statusField
-          = f.label :status
-          = f.select :status, Product.statuses.keys, {prompt: '選択してください'}, class: "statusField__text"        
+          = f.select :status, Product.statuses_i18n.invert, {prompt: '選択してください'}, class: "statusField__text"        
       .sellContents__category
         カテゴリー
         %span 必須
         .categoryField
-          = f.label :category
-          = f.select :name, Category.names.keys, {prompt: '選択してください'}, class: "categoryField__text"
+          = f.collection_select :category_id, @parents, :id, :name, {prompt: '選択してください'}, class: "categoryField__text"
       .sellContents__shipping
         配送について
         %ul.shippingLists
@@ -41,20 +52,17 @@
             配送料の負担 
             %span 必須
             .costField
-              = f.label :shipping_cost
-              = f.select :shipping_cost, Product.shipping_costs.keys, {prompt: '選択してください'}, class: "costField__text"
+              = f.select :shipping_cost, Product.shipping_costs_i18n.invert, {prompt: '選択してください'}, class: "costField__text"
           %li.shippingLists__from
             発送元の地域 
             %span 必須
             .fromField
-              = f.label :shipping_from
-              = f.select :shipping_from, Product.shipping_froms.keys, {prompt: '選択してください'}, class: "fromField__text"
+              = f.select :shipping_from, Product.shipping_froms_i18n.invert, {prompt: '選択してください'}, class: "fromField__text"
           %li.shippingLists__days
             発送までの日数 
             %span 必須
             .daysField
-              = f.label :days
-              = f.select :days, Product.days.keys, {prompt: '選択してください'}, class: "daysField__text"
+              = f.select :days, Product.days_i18n.invert, {prompt: '選択してください'}, class: "daysField__text"
       .sellContents__price
         販売価格（￥300〜￥9,999,999）
         %ul.priceLists
@@ -63,7 +71,6 @@
               価格
               %span 必須
               ¥
-              = f.label :price
               = f.number_field :price, class: "valueField__text"
           %li.priceLists__fee
             販売手数料
