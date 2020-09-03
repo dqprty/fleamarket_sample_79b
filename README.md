@@ -1,4 +1,7 @@
 # README 
+
+アプリ名 FURIMAアプリ
+
 ## usersテーブル
 |Column|Type|Option|
 |------|----|------|
