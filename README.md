@@ -6,7 +6,7 @@ FURIMAアプリ
 ## 概要
 TECH CAMPの最終課題（チーム開発）にて、不用品販売のフリーマーケットのWEBアプリケーションを作成しました。
 
-DB設計
+##DB設計
 
 ## usersテーブル
 |Column|Type|Option|
