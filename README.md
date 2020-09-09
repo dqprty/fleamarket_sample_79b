@@ -38,6 +38,10 @@ Pass: 7979b
 
 パスワード: sell12345
 
+## 使用環境
+
+Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
+
 ## DB設計
 
 ## usersテーブル
