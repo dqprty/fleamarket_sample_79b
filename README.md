@@ -1,3 +1,5 @@
+README.md
+
 ## アプリ名 
 FURIMAアプリ
 
