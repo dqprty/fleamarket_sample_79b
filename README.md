@@ -1,5 +1,3 @@
-# README 
-
 ## アプリ名 
 FURIMAアプリ
 
